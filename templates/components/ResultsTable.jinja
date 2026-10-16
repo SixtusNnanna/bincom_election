@@ -1,0 +1,25 @@
+
+{#def results #}
+
+<div class="table-wrapper">
+    <table>
+        <thead>
+            <tr>
+                <th>Party</th>
+                <th>Votes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.party_abbreviation }}</td>
+                <td>{{ result.party_score }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="2">No results found for this polling unit.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

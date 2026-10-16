@@ -1,0 +1,38 @@
+
+{#def selected_lga, total_polling_units, results, message #}
+
+{% if selected_lga %}
+    <section>
+        <h2>Results for {{ selected_lga.lga_name }}</h2>
+
+        {% if total_polling_units is not none %}
+            <p>
+                <strong>Total polling units:</strong>
+                {{ total_polling_units }}
+            </p>
+        {% endif %}
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+
+        {% if results %}
+            <table border="1" cellpadding="8">
+                <thead>
+                    <tr>
+                        <th>Party</th>
+                        <th>Total Votes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for party, total_score in results %}
+                        <tr>
+                            <td>{{ party }}</td>
+                            <td>{{ total_score or 0 }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </section>
+{% endif %}

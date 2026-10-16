@@ -1,0 +1,25 @@
+
+{#def lgas, selected_lga_id #}
+
+<section>
+    <h2>Select a Local Government Area</h2>
+
+    <form action="/lga-results" method="get">
+        <label for="lga_id">Local Government Area:</label>
+
+        <select name="lga_id" id="lga_id" required>
+            <option value="">-- Choose an LGA --</option>
+
+            {% for lga in lgas %}
+                <option
+                    value="{{ lga.uniqueid }}"
+                    {% if selected_lga_id == lga.uniqueid %}selected{% endif %}
+                >
+                    {{ lga.lga_name }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">View Results</button>
+    </form>
+</section>
