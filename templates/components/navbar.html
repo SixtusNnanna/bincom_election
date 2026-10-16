@@ -1,0 +1,66 @@
+
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 18px 24px;
+        margin: 20px 0 28px;
+        background: #176b55;
+        border-radius: 10px;
+        color: white;
+    }
+
+    .brand {
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 12px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .nav-links a:hover {
+        background: #0f503f;
+    }
+
+    @media (max-width: 600px) {
+        .navbar {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .nav-links {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .nav-links a {
+            display: block;
+        }
+    }
+</style>
+
+<nav class="navbar">
+    <a href="/" class="brand">Bincom Elections</a>
+
+    <div class="nav-links">
+        <a href="/">Polling Unit Results</a>
+        <a href="/lga-results">LGA Results</a>
+        <a href="/polling-units/new">Create Polling Unit</a>
+    </div>
+</nav>
